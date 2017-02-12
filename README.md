@@ -27,4 +27,4 @@ $ ./calabash.sh -- configure-git.sh --help
 You can specify configurations for some of the scripts in the ./config directory. __DO NOT__ make changes in the .&ast;default.yml files. These files will be overwritten when you update unabashed. Use the &ast;.yml (config.yml for example) instead.
 
 ##unabashed
-unabashed is a simple framework that helps with script development. It is available here <https://github.com/MetaphoricalSheep/unabashed>. The calabash repo currenlty includes a copy of unabashed, but this will change once update-unabashed is able to pull down the repo.
+unabashed is a simple framework that helps with script development. It is available here <https://github.com/MetaphoricalSheep/unabashed>. The calabash repo currently includes a copy of unabashed, but this will change once update-unabashed is able to pull down the repo.
