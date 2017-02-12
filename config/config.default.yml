@@ -7,5 +7,5 @@ mailgun:
   server: 
 
 git:
-  email: 
-  name: 
+  email:
+  name:

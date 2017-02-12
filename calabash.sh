@@ -17,16 +17,16 @@ __SCRIPTS__=()
 
 
 usage() {
-  tellMessage "<info>Usage</>"
-  tellMessage "<comment>$__PROJECT__ <cmd> [cmd params]"
-  tellMessage "Call calabash with the cmd you would like to execute"
-  tellMessage "<comment>$__PROJECT__ <cmd> --help"
-  tellMessage "Display usage of the specified cmd."
+  output__tell__message "<info>Usage</>"
+  output__tell__message "<comment>$__PROJECT__ <cmd> [cmd params]"
+  output__tell__message "Call calabash with the cmd you would like to execute"
+  output__tell__message "<comment>$__PROJECT__ <cmd> --help"
+  output__tell__message "Display usage of the specified cmd."
 
   exit 1
 }
 
-tellFancyTitle "A collection of scripts to make your life easier." "$__PROJECT__" "fg=white;bg=c_22"
+output__tell__fancyTitle "A collection of scripts to make your life easier." "$__PROJECT__" "fg=white;bg=c_22"
 
 params="$(getopt -o sh -l silent,help --name "$(basename "$0")" -- "$@")"
 
@@ -65,9 +65,9 @@ __internal_get_scripts() {
 
 
 __internal_list_scripts() {
-  tellMessage "<comment>Available scripts:</>"
+  output__tell__message "<comment>Available scripts:</>"
   for script in ${__SCRIPTS__[*]}; do
-    tellMessage "<info>    -  $(basename "$script")</>"
+    output__tell__message "<info>    -  $(basename "$script")</>"
   done
 }
 
@@ -89,7 +89,7 @@ main() {
     fi
   done
       
-  tellError "The script you are trying to run does not exist!"
+  output__tell__error "The script you are trying to run does not exist!"
   __internal_list_scripts
   exit 1
 }

@@ -1,2 +1,2 @@
 ip=$(curl -s icanhazip.com)
-tellFancyTitle "$ip" "Your IP:"
+output__tell__fancyTitle "$ip" "Your IP:"
