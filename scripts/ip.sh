@@ -1,2 +1,2 @@
-ip=$(curl icanhazip.com)
+ip=$(curl -s icanhazip.com)
 tellFancyTitle "$ip" "Your IP:"
