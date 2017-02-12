@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+__DIR__=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
+
+unabashed update  "$__DIR__" "calabash"
