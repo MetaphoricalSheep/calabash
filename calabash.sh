@@ -9,7 +9,7 @@ IFS=$'\n\t'
 
 # Including unabashed framework
 __DIR__=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
-. "$__DIR__"/.unabashed/unabashed.sh
+. "$__DIR__"/vendor/unabashed/unabashed.sh
 
 
 __PROJECT__=calabash
