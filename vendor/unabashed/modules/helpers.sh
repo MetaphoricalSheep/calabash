@@ -4,7 +4,7 @@ if [[ -z "$__UNABASHEDDIR__" ]]; then
 fi
 
 
-is_number() {
+helpers__is_number() {
   helpers__empty "$1" && return 1
   local _num="$1"; shift
   local _re='^[0-9]+$'
@@ -33,7 +33,7 @@ file_exists() {
 }
 
 
-is_file() {
+helpers__is_file() {
   file_exists "$1" && return 0
   return 1
 }
@@ -155,3 +155,22 @@ unix_timestamp() {
   echo "$_timestamp"
   return 0
 }
+
+
+# $1 - string filename
+# $2 - bool recursive
+helpers__get_hash() {
+  require_parameter_count "$FUNCNAME" "$LINENO" 1 "$#"
+
+  if helpers__empty "${1:-}"; then
+    echo 0
+  fi
+
+  if helpers__empty "${2:-}"; then
+    echo `md5sum "$1"`
+  else
+    echo `find "$1" -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum`
+  fi
+}
+
+
